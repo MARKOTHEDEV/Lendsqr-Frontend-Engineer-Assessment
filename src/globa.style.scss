@@ -1,0 +1,29 @@
+$tealcolor:#39CDCC;
+$gray:#545F7D;
+$pink:#DF18FF;
+$purple:#5718FF;
+$orange:#F55F44;
+$red:#FF3366;
+$yellow:#E9B200;
+$green:#39CD62;
+$boxShadow:3px 5px 20px rgba(0, 0, 0, 0.04);
+@font-face {
+    font-family: 'avenirnext';
+    src: url(./assets/font/AvenirNextLTPro-Regular.otf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+
+@font-face {
+    font-family: 'avenirnext';
+    src: url(./assets/font/AvenirNextLTPro-Bold.otf);
+    font-style: normal;
+    font-weight: 700;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: avenirnext,sans-serif;
+}
