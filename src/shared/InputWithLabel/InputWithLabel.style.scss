@@ -1,0 +1,30 @@
+@import '../../globa.style.scss';
+
+
+
+.form-group{
+    border: transparent;
+    overflow: hidden;
+    position: relative;    
+    input{
+        width: 100%;
+        border-radius: 10px;
+        padding: 1rem;
+        border: $inputBorder;
+        outline: none;
+        transition: border .1s ease-in-out;
+        &:focus {
+            border: 3px solid rgba(156, 226, 226, 0.835);
+        }
+    }
+    .passwordview{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+        color:$tealcolor;
+    }
+   
+}
+
