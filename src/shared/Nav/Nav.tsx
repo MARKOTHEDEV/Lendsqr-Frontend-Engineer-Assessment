@@ -10,6 +10,7 @@ import OffCanvas from "../OffCanvas/OffCanvas"
 import { useMediaQuery } from 'react-responsive'
 import {BiUserCircle} from 'react-icons/bi'
 import {FaBars} from 'react-icons/fa'
+import SideBar from "../SideBar/SideBar"
 
 
 const NavLinksContainer = ():React.ReactElement=>{
@@ -31,6 +32,7 @@ const NavLinksContainer = ():React.ReactElement=>{
 }
 const Nav =()=>{
   const [isOpen, setIsOpen] = useState(false)
+  const [openSideBar,setOpenSideBar] =useState(false)
   const isLaptop = useMediaQuery({ query: '(min-width: 700px)' });
     
     return (
@@ -44,7 +46,7 @@ const Nav =()=>{
             :
             <div className="hambar_container">
                 <BiUserCircle onClick={e=>setIsOpen(!isOpen)}/>
-                <FaBars/>
+                <FaBars onClick={e=>setOpenSideBar(!openSideBar)}/>
             </div>
             }
 
@@ -59,9 +61,18 @@ const Nav =()=>{
         size={80}
         setIsOpen={setIsOpen}
         isOpen={isOpen}
-        // shows side bar
+        // show nav
       >
             <NavLinksContainer/>
+      </OffCanvas>
+
+      <OffCanvas
+        size={80}
+        setIsOpen={setOpenSideBar}
+        isOpen={openSideBar}
+        // shows side bar
+      >
+            <SideBar/>
       </OffCanvas>
         </div>
     )

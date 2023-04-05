@@ -1,0 +1,49 @@
+
+@import '../../globa.style.scss';
+
+.sidebar__container{
+    min-width: 210px;
+    background-color: #FFFFFF;
+    // border: 1px solid red;
+}
+
+.sidebar_links_group{
+    p{
+        font-size: .8rem;
+        font-weight: 600;
+        padding: .2rem 1.2rem;
+        color:  $blue;
+        opacity: .8;
+    }
+}
+.sidebar_links a{
+    color: $blue;
+    opacity: .6;
+    text-decoration: none;
+    padding: .9rem 1.2rem;
+    display: block;
+    font-weight: 400;
+    // transform: translateX(20px);
+}
+.sidebar_links a svg{
+    display: inline-block;
+    margin-right: .5rem;
+    font-size: 1.2rem;
+}
+
+.sidebar_links a.active{
+    opacity: 1;
+    background: $tealcolorTrans;
+    color: $blue;
+    position: relative;
+}
+
+.sidebar_links a.active::after{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: $tealcolor;
+}
