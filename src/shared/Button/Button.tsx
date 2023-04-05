@@ -5,22 +5,24 @@ export type ButtonProp =React.PropsWithChildren<{
     'style'?:React.CSSProperties,
     onClick?:(e:React.MouseEvent<HTMLButtonElement>)=>void;
     isLoading?:boolean;
+    type?:"button" | "reset" | "submit";
   }>
   
 
-const Button = ({styleType,isLoading=false,children,style,onClick,...rest}:ButtonProp):React.ReactElement=>{
+const Button = ({styleType,isLoading=false,children,style,onClick,type='button',...rest}:ButtonProp):React.ReactElement=>{
     return (
 
-        <motion.div  className={`CustomBtn  ${styleType}`}  style={style} whileTap={{ scale: 0.9 }}
+        <motion.button  className={`CustomBtn  ${styleType}`}  style={style} whileTap={{ scale: 0.9 }}
         animate={{
           transition: {
             type:'spring',
             stiffness:70
           }
         }}
+        type={type}
         {...rest}>
         {isLoading?'Loading...':children}
-      </motion.div>
+      </motion.button>
     )
 }
 
