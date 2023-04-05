@@ -1,11 +1,13 @@
 import Img from '../../assets/logo.svg'
 
-
-const AppLogo = ():React.ReactElement=>{
+type Prop ={
+    style?:React.CSSProperties
+}
+const AppLogo = ({ style}:Prop):React.ReactElement=>{
 
 
     return (
-        <div>
+        <div style={style}>
             <img src={Img} alt="" />
         </div>
     )

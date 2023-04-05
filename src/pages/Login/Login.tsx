@@ -24,7 +24,7 @@ const Login =():React.ReactElement=>{
       const onSubmit = (data: LoginFormType) =>{
         //by the way this is a sweet ui nice job done by the ux/ui designer
         console.log(`Welcome ${data.email}`)
-        navigate('/dashboard')
+        navigate('/users')
       }
       console.log(errors)
     return (
