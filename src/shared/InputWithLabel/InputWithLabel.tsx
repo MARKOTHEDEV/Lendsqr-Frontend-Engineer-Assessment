@@ -41,7 +41,7 @@ export const InputWithLabel = (
     return (
         <div className="form-group" style={style}>
             {type==='password'&&<RenderIcon/>}
-            <input type={decideType()}   placeholder={label} />
+            <input type={decideType()}   placeholder={label} {...register}/>
             <span style={{'color':'crimson'}}>{errorMessage}</span>
         </div>
     )
