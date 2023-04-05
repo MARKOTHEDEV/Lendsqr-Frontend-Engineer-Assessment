@@ -1,0 +1,21 @@
+
+
+.inputwithsearch__container{
+    display: flex;
+    // max-width: 400px;
+    input{
+        border-radius: 0px;
+        &:focus{
+            border-right: unset;
+        }
+    }
+    .form-group{
+        width: 80%;
+    }
+    button{
+        width: 20%;
+        border-top-left-radius: unset;
+        border-bottom-left-radius: unset;
+        
+    }
+}
