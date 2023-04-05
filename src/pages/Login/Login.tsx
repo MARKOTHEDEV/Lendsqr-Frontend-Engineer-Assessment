@@ -2,13 +2,13 @@ import './Login.style.scss'
 import LoginImage from '../../assets/pablo-sign-in 1.svg'
 import AppLogo from '../../shared/Logo/Logo'
 import { InputWithLabel } from '../../shared/InputWithLabel/InputWithLabel'
+import Button from '../../shared/Button/Button'
 
 const Login =():React.ReactElement=>{
 
     return (
         <div className='login_container'>
             <AppLogo/>
-            <br />
             <br />
             <br />
             <div className='auth_container'>
@@ -33,14 +33,20 @@ const Login =():React.ReactElement=>{
                     type='password'
                     />
                     <br /><br />
-                    <p className='forgot_password_link'>
-                    Forgot PASSWORD?
+                    <div style={{'display':'flex','alignItems':'center','justifyContent':'space-between'}}>
+                        <p className='forgot_password_link'>
+                        Forgot PASSWORD?
                         </p>
+                        <p className='forgot_password_link'>
+                        Sign up
+                        </p>
+                    </div>
 
-                    
+                    <br />
+                    <Button>Log in</Button>
                 </form>
             </div>
-        </div>
+            </div>
         </div>
       
     )

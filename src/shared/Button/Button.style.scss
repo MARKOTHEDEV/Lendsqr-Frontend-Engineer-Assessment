@@ -1,0 +1,35 @@
+@import '../../globa.style.scss';
+
+
+.CustomBtn{
+    
+    border: transparent;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    width: 100%;
+    background-color: $tealcolor;
+    color: white;
+    font-weight: 700;
+}
+
+.CustomBtn.whitBtn{
+    color: $gray;
+    border: 1px solid $gray;
+    background-color: white;
+}
+.CustomBtn.danger{
+    color: $red;
+    background-color: white;
+    border: 1px solid $red;
+}
+
+.CustomBtn.emptyCustom{
+    color: $tealcolor;
+    background-color: white;
+    border: 1px solid $tealcolor;
+}
