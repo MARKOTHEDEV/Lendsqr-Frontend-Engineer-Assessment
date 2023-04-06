@@ -13,6 +13,7 @@ import dotImg from '../../assets/dot.svg'
 import { getRandomInt } from '../../utils/extraFunction'
 import moment from "moment";
 import {BiFilter} from 'react-icons/bi'
+import Preloader from '../../shared/Preloader/Preloader'
 
 const UsersPage = ():React.ReactElement=>{
   const isLaptop = useMediaQuery({ query: '(min-width: 1200px)' });
@@ -87,9 +88,7 @@ const UsersPage = ():React.ReactElement=>{
         <div className="userspage__container">
             <h2>Users</h2>
             <br /><br />
-            {
-                isLoading&&<h1>loading</h1>
-            }
+            <Preloader loading={isLoading}/>
            <div style={{'display':'flex',justifyContent:'space-between','gap':'20px','flexWrap':'wrap','width':'100%',}}>
            <UserCountCard
                 colorVariants='pink'
