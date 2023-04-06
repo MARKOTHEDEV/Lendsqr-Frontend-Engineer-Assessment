@@ -9,14 +9,19 @@ import { useMediaQuery } from 'react-responsive'
 import Table, { prop_columnsType } from '../../shared/Tables/Table'
 import { useQuery } from 'react-query'
 import { getUsersApi } from '../../api/users.api'
-import dotImg from '../../assets/dot.svg'
 import { getRandomInt } from '../../utils/extraFunction'
 import moment from "moment";
 import {BiFilter} from 'react-icons/bi'
 import Preloader from '../../shared/Preloader/Preloader'
-
+import Button from '../../shared/Button/Button'
+import ViewMore, { EllipsesBtn } from '../../shared/ViewMore/ViewMore'
+import { useState } from 'react'
+import { InputWithLabel } from '../../shared/InputWithLabel/InputWithLabel'
+import UserTableFilterForm from '../../shared/UserTableFilterForm/UserTableFilterForm'
 const UsersPage = ():React.ReactElement=>{
   const isLaptop = useMediaQuery({ query: '(min-width: 1200px)' });
+  const [filter,setFilter]=useState(false)
+  const [viewMore,setViewMore] = useState(false)
   const {data,isLoading} = useQuery('users',getUsersApi,{'refetchOnWindowFocus':false})
     const columns:prop_columnsType[] = [
         {
@@ -76,9 +81,8 @@ const UsersPage = ():React.ReactElement=>{
             id:6,
             Cell:(tableProps:any)=>{
                 return (
-                    <div style={{'margin':'0 1rem','cursor':'pointer'}}>
-                        <img src={dotImg} alt="" />
-                    </div>
+                    <EllipsesBtn userID={tableProps.row.original.id}/>
+
                 )
             }
         }
@@ -121,7 +125,19 @@ const UsersPage = ():React.ReactElement=>{
 
            <br />
            <br />
-
+           <br />
+           
+           <div  style={{'width':'150px','position':'relative'}}>
+           <Button 
+           styleType='whitBtn'
+            onClick={e=>{setFilter(!filter)}}>
+                FILTER BY</Button>
+           <br />
+           <ViewMore show={filter}>
+                <UserTableFilterForm/>
+                </ViewMore>
+           </div>
+           
             <div >
 
          {
