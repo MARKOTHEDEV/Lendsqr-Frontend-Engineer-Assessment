@@ -12,15 +12,17 @@ const DashBoardLayout = ({ children }:Prop):React.ReactElement=>{
 
 
     return (
-        <div>
+        <div style={{'backgroundColor':'#fbfbfb'}}>
             <Nav/>
             <br />
-            <div style={{'display':'flex'}}>
+            <div style={{'display':'flex',}}>
            {
             isLaptop?
             <SideBar/>:''
            }
-            <Outlet />
+           <div style={{'padding':'1.5rem'}}>
+           <Outlet />
+           </div>
             </div>
             
         </div>
