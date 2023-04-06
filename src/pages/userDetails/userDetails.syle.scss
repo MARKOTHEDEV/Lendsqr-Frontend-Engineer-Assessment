@@ -1,0 +1,136 @@
+@import '../../globa.style.scss';
+
+.user_details_goback__container{
+    display: flex;
+    align-items: center;
+    p{
+        transform: translateX(10px);
+    }
+}
+
+.user_details_main_nav_container{
+    // border: 1px solid red;
+    text-align: center;
+    padding: .5rem 0;
+    h2{
+        color: $blue;
+    }
+    div{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+    button{
+        width: 45%;
+        padding: .5rem .3rem;
+    }
+    }
+
+    @media screen and (min-width:500px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div{
+            // border: 1px solid red;
+            width: 300px;
+        }
+    }
+}
+
+
+.userdetails__container{
+    max-width: 1000px;
+    margin:  0 auto;
+}
+
+
+.user_intro_container__user_image_container{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: rgba(33, 63, 125,.2);
+    margin: 0 auto;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and (min-width:700px){
+        width: 90px;
+        height: 90px;
+        padding: 1.8rem;
+    }
+}
+
+.user_intro_container{
+    @media screen and (min-width:700px){
+        display: flex;
+        align-items: center;
+        // border: 1px solid red;
+        max-width: 650px;
+        & > div:nth-child(2){
+            width: 80%;
+            // border: 1px solid yellow;
+            h2,p{
+                text-align: left ;
+            }
+        }
+    }
+}
+.user_intro{
+    @media screen and (min-width:700px){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.user_intro_detail_container{
+    color: $blue;
+    text-align: center;
+    margin: 1rem 0;
+    h2{
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: .5rem 0;
+    }
+    p{
+        font-size: 1rem;
+        opacity: .7;
+    }
+}
+
+
+.user_info_tabs_container{
+    // position: absolute;
+    // width: 100%;
+    // bottom: 10px;
+}
+.user_info_tabs_container__links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(50px);
+
+    p.active{
+        color:$tealcolor;
+        position: relative;
+    }
+
+    p.active::after{
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: $tealcolor;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+    }
+
+    @media screen and (max-width:600px){
+        p{
+            margin-bottom: 50px;
+        }
+    }
+}

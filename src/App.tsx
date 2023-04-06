@@ -9,6 +9,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query';
+import UserDetails from './pages/userDetails/userDetails'
 
 const queryClient = new QueryClient()
 
@@ -23,7 +24,8 @@ function App() {
 
           <Route element={<DashBoardLayout/>}>
             <Route path="/users" element={<UsersPage/>}/>
-              
+            <Route path="/user-details/:id" element={<UserDetails/>}/>
+                      
           </Route>
 
         </Routes>
