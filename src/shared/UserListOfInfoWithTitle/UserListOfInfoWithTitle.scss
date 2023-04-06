@@ -1,0 +1,41 @@
+@import '../../globa.style.scss';
+
+
+.userlistofinfowithtitle__container{
+    color: $blue;
+    border-bottom: .8px solid rgb(33, 63, 125,.2);
+    .userlistofinfowithtitle__title{
+        font-size: 1.3rem;
+    }
+
+    
+}
+
+.list_of_each_userinfo__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 1.4rem 0;
+    font-family: 'Work Sans',sans-serif;
+    justify-content: space-between;
+    // border: 1px solid red;
+    p{
+        text-transform: capitalize;
+        font-weight: 400;
+        opacity: .7;
+        padding: .7rem 0;
+    }
+    h4{
+        font-size: 1rem;
+        opacity: .7;
+        font-weight: 600;
+    }
+
+      @media screen and (min-width:700px) {
+        
+        display: grid;
+        grid-template-columns: 1fr  1fr  1fr  1fr;
+    }
+}

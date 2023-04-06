@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import './Button.style.scss'
 export type ButtonProp =React.PropsWithChildren<{
-    'styleType'?:'whitBtn'|'danger'|'emptyCustom',
+    'styleType'?:'whitBtn'|'danger'|'emptyCustom'|'green',
     'style'?:React.CSSProperties,
     onClick?:(e:React.MouseEvent<HTMLButtonElement>)=>void;
     isLoading?:boolean;
