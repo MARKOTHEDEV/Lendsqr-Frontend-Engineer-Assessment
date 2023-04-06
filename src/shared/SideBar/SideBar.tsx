@@ -2,6 +2,16 @@
 import {BsHouse} from 'react-icons/bs'
 import './SideBar.style.scss'
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import {HiUsers} from 'react-icons/hi'
+import {TbMoneybag} from 'react-icons/tb'
+import {FaHandshake} from 'react-icons/fa'
+import {FaMoneyBillWave} from 'react-icons/fa'
+import {FaUserAlt,FaListAlt,FaPeopleArrows} from 'react-icons/fa'
+import {ImPriceTag} from 'react-icons/im'
+import {GoSettings} from 'react-icons/go'
+import {RiProductHuntLine} from 'react-icons/ri'
+import {MdSavings} from 'react-icons/md'
 type Prop = {
     heading?:string;
     listLink:{
@@ -22,12 +32,13 @@ const SideBarGroup = ({heading,listLink,style={}}:Prop):React.ReactElement=>{
         {
             listLink.map((data,index)=>(
                 <li className="sidebar_links" >
-                <a href=""
+                <NavLink
+                to={data.link}
                 //  className='active'
                  >  
                     {data.icon}
                     {data.name}
-                </a>
+                </NavLink>
                 </li>
             ))
         }
@@ -53,42 +64,42 @@ const SideBar =  ():React.ReactElement=>{
            <SideBarGroup
            heading='CUSTOMERS'
            listLink={[{
-            'icon':<BsHouse/>,
+            'icon':<HiUsers/>,
             'name':'Users',
-            'link':''
+            'link':'/users'
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<HiUsers/>,
             'name':'Guarantors',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<TbMoneybag/>,
             'name':'Loans',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<FaHandshake/>,
             'name':'Decision Models',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<FaMoneyBillWave/>,
             'name':'Savings',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<FaMoneyBillWave/>,
             'name':'Loan Requests',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<FaUserAlt/>,
             'name':'Whitelist',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<FaUserAlt/>,
             'name':'Karma',
             'link':''
            },
@@ -99,23 +110,77 @@ const SideBar =  ():React.ReactElement=>{
 <SideBarGroup
            heading='BUSINESSES'
            listLink={[{
-            'icon':<BsHouse/>,
+            'icon':<FaPeopleArrows/>,
             'name':'Organization',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<RiProductHuntLine/>,
             'name':'Loan Products',
             'link':''
            }
            ,
            {
-            'icon':<BsHouse/>,
+            'icon':<MdSavings/>,
             'name':'Savings Products',
             'link':''
-           }
+           },
+           {
+            'icon':<BsHouse/>,
+            'name':'Fees and Charges ',
+            'link':''
+           },
+           {
+            'icon':<BsHouse/>,
+            'name':'Transactions ',
+            'link':''
+           },
+           {
+            'icon':<BsHouse/>,
+            'name':'Services ',
+            'link':''
+           },
+           {
+            'icon':<BsHouse/>,
+            'name':'Service Account ',
+            'link':''
+           },
+           {
+            'icon':<BsHouse/>,
+            'name':'Settlements',
+            'link':''
+           },
+           {
+            'icon':<BsHouse/>,
+            'name':'Reports',
+            'link':''
+           },
         ]}
+        style={{'marginBottom':'20px'}}
+
            /> 
+           
+<SideBarGroup
+           heading='SETTINGS'
+           listLink={[
+
+            {
+                'icon':<GoSettings/>,
+                'name':'Preferences',
+                'link':''
+               },
+
+               {
+                'icon':<ImPriceTag/>,
+                'name':'Fees and Pricing',
+                'link':''
+               },
+               {
+                'icon':<FaListAlt/>,
+                'name':'Audit Logs',
+                'link':''
+               },
+           ]}/>
         </div>
 
     )
