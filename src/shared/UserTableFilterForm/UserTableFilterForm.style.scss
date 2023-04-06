@@ -1,0 +1,15 @@
+
+
+.UserTableFilterForm__container{
+    min-width:300px;
+    padding:1rem;
+}
+
+.UserTableFilterForm__btncontainer{
+    display:flex;
+    justify-content:space-between;
+    
+    button{
+        width: 47%;
+    }
+}

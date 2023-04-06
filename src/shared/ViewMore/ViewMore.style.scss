@@ -1,0 +1,43 @@
+
+
+
+.ViewMore__container{
+    background-color: #FFFFFF;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    padding: 1rem .3rem;
+    display: none;
+    position: absolute;
+    // transform: translateY(90px) translateX(60px);
+    z-index: 100;
+    // min-width: 300px;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.ViewMore__container.show{
+    display: block;
+}
+
+
+.EllipsesBtn__container{
+    cursor: pointer;
+    position: relative;
+}
+
+.EllipsesBtn__floatingpane{
+    background-color: white;
+border-radius: 5px;
+padding: 1rem;
+min-width: 160px;
+position: absolute;
+top: 50px;
+right: 0;
+z-index: 100;
+box-shadow: 10px 10px 48px 0px rgba(0, 0, 0, 0.116);
+    & div{
+        display: flex;
+        padding: .4rem 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

@@ -9,7 +9,7 @@ export type ButtonProp =React.PropsWithChildren<{
   }>
   
 
-const Button = ({styleType,isLoading=false,children,style,onClick,type='button',...rest}:ButtonProp):React.ReactElement=>{
+const Button = ({styleType,isLoading=false,children,style,type='button',...rest}:ButtonProp):React.ReactElement=>{
     return (
 
         <motion.button  className={`CustomBtn  ${styleType}`}  style={style} whileTap={{ scale: 0.9 }}
