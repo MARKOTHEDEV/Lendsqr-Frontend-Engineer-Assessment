@@ -1,0 +1,64 @@
+@import '../../globa.style.scss';
+
+.table_container{
+  background-color: #FFFFFF;
+  padding: 2rem;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+}
+table {
+    font-family: 'Work Sans',sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    // padding: 2rem;
+  }
+
+
+  table th {
+      padding: 8px;
+      font-weight: 600;
+    }
+    table td{
+      border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+    padding: 20px 8px;
+    text-align: center;
+  }
+  table tr:hover {
+    background-color: #ddd;
+  }
+
+  table th, tfoot td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: white;
+    color: $gray;
+  }
+  .table_status{
+    padding: .4rem;
+    background-color: rgba(84, 95, 125,.2); 
+    color: $gray;
+  }
+.table_showing_container{
+    color: $gray;
+    width: 210px;
+    // border: 1px solid red;
+    display: flex;
+    justify-content: space-between  ;
+    align-items: center;
+}
+
+.table_showing_container select,.table_next_btn button{
+    padding: .2rem .8rem;
+    background-color: rgba(33, 63, 125,.1);
+    border: transparent;
+    color:$blue;
+}
+
+.table_pagination_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+}
