@@ -2,7 +2,7 @@ import Nav from "../../shared/Nav/Nav"
 import { Outlet } from "react-router-dom";
 import SideBar from "../../shared/SideBar/SideBar";
 import { useMediaQuery } from 'react-responsive'
-
+import './DashBoardLayout.style.scss'
 
 
 
@@ -12,15 +12,17 @@ const DashBoardLayout = ({ children }:Prop):React.ReactElement=>{
 
 
     return (
-        <div>
+        <div style={{'backgroundColor':'#fbfbfb',}}>
             <Nav/>
             <br />
-            <div style={{'display':'flex'}}>
+            <div className="dashboardlayout__container">
            {
             isLaptop?
             <SideBar/>:''
            }
-            <Outlet />
+           <div style={{'padding':'1.5rem',}}>
+           <Outlet />
+           </div>
             </div>
             
         </div>

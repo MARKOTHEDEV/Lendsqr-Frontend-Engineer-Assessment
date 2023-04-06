@@ -1,0 +1,57 @@
+@import '../../globa.style.scss';
+
+
+.usercountcard__image{
+    display: block;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .4rem;
+}
+
+.usercountcard__image.purple{
+    background-color: rgba(87, 24, 255,.1);
+}
+
+.usercountcard__image.pink{
+    background-color:rgba(223, 24, 255,.1);
+}
+.usercountcard__image.orange{
+    background-color: rgba(245, 95, 68,.1);
+}
+
+.usercountcard__image.red{
+    background-color:rgba(255, 51, 102,.1);
+}
+
+.usercountcard__container{
+    background-color: white;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    padding: 2rem ;
+    border-radius: 5px;
+    min-width: 250px;
+    margin: 0 auto;
+
+    @media screen and (min-width:600px) {
+        margin: unset;
+    }
+}
+
+.usercountcard__type{
+    color: $gray;
+    padding:  .5rem 0;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.usercountcard__count{
+    font-size: 2.5rem;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    // color: red;
+
+}
