@@ -10,7 +10,8 @@ type User={
         "lastName":string,
         "phoneNumber":string,
         "avatar":string,
-        "gender":string,"bvn":string,"address":string,
+        "gender":string,"bvn":string,
+        "address":string,
         "currency":string},
         "guarantor":{
             "firstName":string,"lastName":string,"phoneNumber":string,"gender":string,"address":string},
@@ -23,5 +24,10 @@ type User={
 
 export const getUsersApi =async ():Promise<User[]>=>{
     const resp = await api.get('users/')
+    return  resp.data
+}
+
+export const getUsersDetailsApi =async (id:string):Promise<User>=>{
+    const resp = await api.get(`users/${id}`)
     return  resp.data
 }

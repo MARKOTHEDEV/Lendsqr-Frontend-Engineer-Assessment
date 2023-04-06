@@ -5,17 +5,29 @@ import uservector from '../../assets/uservector.svg'
 import Star from '../../assets/start (1).svg'
 import './userDetails.syle.scss'
 import UserListOfInfoWithTitle from '../../shared/UserListOfInfoWithTitle/UserListOfInfoWithTitle'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useQuery } from 'react-query'
+import { getUsersDetailsApi } from '../../api/users.api'
+import Preloader from '../../shared/Preloader/Preloader'
 
 
 const UserDetails =()=>{
+    const {id} =useParams()
+    const navigate = useNavigate()
+    const {data,isLoading,status} =useQuery(['user',id],()=>getUsersDetailsApi(typeof id=='string'?id:'-2'),{
+        // enabled:typeof id=='string'?true:false,
+        refetchOnWindowFocus:false
+    })
 
     return (
         <div className='userdetails__container'>
-            <div className='user_details_goback__container'>
+            <div className='user_details_goback__container' onCanPlay={e=>{
+                navigate('/users')
+            }}>
                 <img src={leftarrow} alt="" />
                 <p>Back to Users</p>
             </div>
-
+            <Preloader loading={isLoading} />
             <div className="user_details_main_nav_container">
                 <h2>User Details</h2>
                 <div>
@@ -31,12 +43,12 @@ const UserDetails =()=>{
             <Pane style={{'position':'relative','paddingBottom':'60px'}}>
                <div className='user_intro_container'>
                     <div className="user_intro_container__user_image_container">
-                        <img src={uservector} alt="" />
+                        <img src={data?.profile.avatar} alt="" />
                     </div>
                      <div className='user_intro'>
                         <div className='user_intro_detail_container'>
-                            <h2>Grace Effiom</h2>
-                            <p>LSQFf587g90</p>
+                            <h2>{data?.profile.firstName} {data?.profile.lastName}</h2>
+                            <p>{data?.accountNumber}</p>
                         </div>
                         <div className="standing_line"></div>
                             <div className="user_intro_detail_container">
@@ -50,7 +62,7 @@ const UserDetails =()=>{
                         <div className="standing_line"></div>
                         
                         <div className='user_intro_detail_container'>
-                            <h2>₦200,000.00</h2>
+                            <h2>{data?.profile.currency}{data?.accountBalance}</h2>
                             <p>9912345678/Providus Bank</p>
                         </div>
                      </div>
@@ -78,23 +90,23 @@ const UserDetails =()=>{
                 info={[
                     {
                         'heading':'full Name',
-                        'value':'Grace Effiom'
+                        'value':`${data?.profile.firstName} ${data?.profile.lastName}`
                     },
                     {
                         'heading':'Phone Number',
-                        'value':'07060780922'
+                        'value':`${data?.profile.phoneNumber}`
                     },
                     {
                         'heading':'Email Address',
-                        'value':'grace@gmail.com'
+                        'value':`${data?.email}`
                     },
                     {
                         'heading':'Bvn',
-                        'value':'07060780922'
+                        'value':`${data?.profile.bvn}`
                     },
                     {
                         'heading':'Gender',
-                        'value':'Female'
+                        'value':`${data?.profile.gender}`
                     },
                     {
                         'heading':'Marital status',
@@ -106,48 +118,96 @@ const UserDetails =()=>{
                     },
                     {
                         'heading':'Type of residence',
-                        'value':'Parent’s Apartment'
+                        'value':`${data?.profile.address}`
                     },
                 ]}
                 />
                 <br />
                 <br />
                 <UserListOfInfoWithTitle
-                heading='Personal Information'
+                heading='Education and Employment'
                 info={[
                     {
-                        'heading':'full Name',
-                        'value':'Grace Effiom'
+                        'heading':'level of education ',
+                        'value':`${data?.education.level}`
                     },
                     {
-                        'heading':'Phone Number',
-                        'value':'07060780922'
+                        'heading':'employment status',
+                        'value':`${data?.education.employmentStatus}`
                     },
                     {
-                        'heading':'Email Address',
-                        'value':'grace@gmail.com'
+                        'heading':'Duration of employment',
+                        'value':`${data?.education.duration}`
                     },
                     {
-                        'heading':'Bvn',
-                        'value':'07060780922'
+                        'heading':'office email',
+                        'value':`${data?.education.officeEmail}`
                     },
                     {
-                        'heading':'Gender',
-                        'value':'Female'
+                        'heading':'Monthly income',
+                        'value':`${data?.education.monthlyIncome}`
                     },
                     {
-                        'heading':'Marital status',
-                        'value':'Single'
+                        'heading':'loan repayment',
+                        'value':`${data?.education.loanRepayment}`
                     },
-                    {
-                        'heading':'Children',
-                        'value':'None'
-                    },
-                    {
-                        'heading':'Type of residence',
-                        'value':'Parent’s Apartment'
-                    },
+
                 ]}
+                />
+                <br />
+                <br />
+                <UserListOfInfoWithTitle
+                heading='Socials'
+                info={[
+                    {
+                        
+                    'heading':'Twitter',
+                    'value':`${data?.socials.twitter}`
+                    },
+                    {
+                        
+                        'heading':'Facebook',
+                        'value':`${data?.socials.facebook}`
+                        },
+                        {
+
+                        'heading':'Instagram',
+                        'value':`${data?.socials.instagram}`
+                        },
+                ]}
+                />
+        <br /><br />
+        <UserListOfInfoWithTitle
+                heading='Guarantor'
+                info={[
+                    {
+                        
+                        'heading':'full Name',
+                        'value':`${data?.guarantor.firstName} ${data?.guarantor.lastName}`
+                        },
+                        {
+                    
+                        'heading':'Phone Number',
+                        'value':`${data?.guarantor.phoneNumber} ${data?.guarantor.lastName}`
+                        },
+                        {
+                    
+                            'heading':'Phone Number',
+                            'value':`${data?.guarantor.phoneNumber} ${data?.guarantor.lastName}`
+                            },
+                            
+                        {
+
+                        'heading':'Email Address',
+                        'value':'null'
+                        },
+                        {
+                    
+                            'heading':'Relationship',
+                            'value':`null`
+                            },
+                ]}
+
                 />
             </Pane>
         </div>  
