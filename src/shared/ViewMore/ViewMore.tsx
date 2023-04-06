@@ -25,10 +25,10 @@ export const EllipsesBtn = ({userID}:EllipsesBtn):React.ReactElement=>{
     const [show,setShow]= useState(false)
     const navigate = useNavigate()        
     return (
-            <div className='EllipsesBtn__container' >
-                 <img src={dotImg}onClick={e=>{
+            <div className='EllipsesBtn__container'  onClick={e=>{
                 setShow(!show)
-             }}  />
+             }} >
+                 <img src={dotImg} />
                  {
                     show?
                     <div className='EllipsesBtn__floatingpane'>

@@ -21,7 +21,7 @@ const UserDetails =()=>{
 
     return (
         <div className='userdetails__container'>
-            <div className='user_details_goback__container' onCanPlay={e=>{
+            <div className='user_details_goback__container' onClick={e=>{
                 navigate('/users')
             }}>
                 <img src={leftarrow} alt="" />
