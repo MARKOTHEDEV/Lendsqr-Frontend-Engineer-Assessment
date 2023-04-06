@@ -4,6 +4,7 @@ import Pane from '../../shared/Pane/Pane'
 import uservector from '../../assets/uservector.svg'
 import Star from '../../assets/start (1).svg'
 import './userDetails.syle.scss'
+import UserListOfInfoWithTitle from '../../shared/UserListOfInfoWithTitle/UserListOfInfoWithTitle'
 
 
 const UserDetails =()=>{
@@ -66,6 +67,88 @@ const UserDetails =()=>{
 
                 </div>
              {/* </div> */}
+            </Pane>
+            <br />
+            <br />
+            <Pane>
+                <br />
+                <br />
+                <UserListOfInfoWithTitle
+                heading='Personal Information'
+                info={[
+                    {
+                        'heading':'full Name',
+                        'value':'Grace Effiom'
+                    },
+                    {
+                        'heading':'Phone Number',
+                        'value':'07060780922'
+                    },
+                    {
+                        'heading':'Email Address',
+                        'value':'grace@gmail.com'
+                    },
+                    {
+                        'heading':'Bvn',
+                        'value':'07060780922'
+                    },
+                    {
+                        'heading':'Gender',
+                        'value':'Female'
+                    },
+                    {
+                        'heading':'Marital status',
+                        'value':'Single'
+                    },
+                    {
+                        'heading':'Children',
+                        'value':'None'
+                    },
+                    {
+                        'heading':'Type of residence',
+                        'value':'Parent’s Apartment'
+                    },
+                ]}
+                />
+                <br />
+                <br />
+                <UserListOfInfoWithTitle
+                heading='Personal Information'
+                info={[
+                    {
+                        'heading':'full Name',
+                        'value':'Grace Effiom'
+                    },
+                    {
+                        'heading':'Phone Number',
+                        'value':'07060780922'
+                    },
+                    {
+                        'heading':'Email Address',
+                        'value':'grace@gmail.com'
+                    },
+                    {
+                        'heading':'Bvn',
+                        'value':'07060780922'
+                    },
+                    {
+                        'heading':'Gender',
+                        'value':'Female'
+                    },
+                    {
+                        'heading':'Marital status',
+                        'value':'Single'
+                    },
+                    {
+                        'heading':'Children',
+                        'value':'None'
+                    },
+                    {
+                        'heading':'Type of residence',
+                        'value':'Parent’s Apartment'
+                    },
+                ]}
+                />
             </Pane>
         </div>  
     )
