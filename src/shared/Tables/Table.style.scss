@@ -2,29 +2,39 @@
 
 .table_container{
   background-color: #FFFFFF;
-  padding: 2rem;
+  // padding: 2rem .3rem;
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
   border-radius: 10px;
-}
-table {
+  overflow: auto;
+// border: 1px solid red;
+  }
+  table {
     font-family: 'Work Sans',sans-serif;
     border-collapse: collapse;
     width: 100%;
-    // padding: 2rem;
   }
 
-
+  
   table th {
       padding: 8px;
       font-weight: 600;
+      position: relative;
+      svg{
+        transform: translateY(5px);
+      }
+
+
     }
     table td{
       border-bottom: 1px solid rgba(33, 63, 125, 0.1);
     padding: 20px 8px;
     text-align: center;
+    color: $gray;
+
   }
   table tr:hover {
     background-color: #ddd;
+
   }
 
   table th, tfoot td {
@@ -35,9 +45,26 @@ table {
     color: $gray;
   }
   .table_status{
-    padding: .4rem;
+    padding: .5rem ;
+    border-radius: 12px;
+  }
+  
+  .table_status.gray{
     background-color: rgba(84, 95, 125,.2); 
     color: $gray;
+  }
+  .table_status.yellow{
+    background-color:rgba(233, 178, 0,.2); 
+    color: $yellow;
+  }
+
+  .table_status.red{
+    background-color:rgba(255, 51, 102,.2); 
+    color: $red;
+  }
+  .table_status.green{
+    background-color:rgba(57, 205, 98,.2); 
+    color: $green;
   }
 .table_showing_container{
     color: $gray;

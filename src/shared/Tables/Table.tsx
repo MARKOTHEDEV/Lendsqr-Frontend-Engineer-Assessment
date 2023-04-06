@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { useTable, usePagination } from 'react-table'
 import './Table.style.scss'
-
+import {BiFilter} from 'react-icons/bi'
 export type prop_columnsType ={Header:string,accessor?:string,Cell?:any,id?:any}
 
 type Prop ={
@@ -58,7 +58,7 @@ type Prop ={
             {headerGroups.map(headerGroup => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map(column => (
-                  <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                  <th {...column.getHeaderProps()}>{column.render('Header')}<BiFilter style={{'fontSize':'1.2rem'}}/></th>
                 ))}
               </tr>
             ))}
