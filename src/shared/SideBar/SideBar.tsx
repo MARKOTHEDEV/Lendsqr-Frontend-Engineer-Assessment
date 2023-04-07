@@ -13,6 +13,12 @@ import {ImPriceTag} from 'react-icons/im'
 import {GoSettings} from 'react-icons/go'
 import {RiProductHuntLine} from 'react-icons/ri'
 import {MdSavings} from 'react-icons/md'
+import {GrTransaction} from 'react-icons/gr'
+import {GrServicePlay} from 'react-icons/gr'
+import {CgTranscript} from 'react-icons/cg'
+import {HiDocumentReport} from 'react-icons/hi'
+
+
 type Prop = {
     heading?:string;
     listLink:{
@@ -132,27 +138,27 @@ const SideBar =  ():React.ReactElement=>{
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<GrTransaction/>,
             'name':'Transactions ',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<GrServicePlay/>,
             'name':'Services ',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<FaUserAlt/>,
             'name':'Service Account ',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<CgTranscript/>,
             'name':'Settlements',
             'link':''
            },
            {
-            'icon':<BsHouse/>,
+            'icon':<HiDocumentReport/>,
             'name':'Reports',
             'link':''
            },
